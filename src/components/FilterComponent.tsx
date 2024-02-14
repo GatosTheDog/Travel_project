@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./FilterComponent.css";
-import { fetchData } from "../api/fetchData";
 import { Package } from "../screens/PackagesScreen";
 import ReactSlider from "react-slider";
 import { AppContext } from "../AppContext";
