@@ -6,6 +6,7 @@
     justify-content: space-between;
     margin-left:24px;
     max-width: 1000px;
+    min-width: 1000px;
 }
 
 .buttonContainer{
@@ -114,6 +115,7 @@
     .cardContainer{
         justify-content: center;
         margin-left:0;
+        min-width: 0;
     }
   }
 
