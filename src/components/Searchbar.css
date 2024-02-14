@@ -1,0 +1,86 @@
+/* Searchbar.module.css */
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f5f5f5; /* This color should match the image background */
+  padding: 0px, 8px, 0px, 0px;
+  border: 1px solid #0000001A;
+  border-radius: 12px; /* Adjust if needed to match the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* This adds a subtle shadow */
+  max-width: 1096px; /* Adjust based on the desired width */
+  width: 100%;
+  margin: auto;
+  height: 64px;
+}
+
+.search-input,
+.search-date,
+.search-guests {
+  border: none;
+  background-color: #f5f5f5; /* Same as the container for seamless appearance */
+  margin-left: 8px;
+  padding: 8px 32px 8px 32px;
+  border-radius: 15px; /* Slightly less than container for the inset effect */
+  color: #999
+  
+}
+
+
+.search-input::placeholder,
+.search-date::placeholder,
+.search-guests::placeholder {
+  color: #999; /* Placeholder text color */
+}
+
+.search-input:focus,
+.search-date:focus,
+.search-guests:focus {
+  outline: none; /* Removes the default focus outline */
+  box-shadow: 0 0 0 2px #00b4d8; /* Adds a custom focus outline, choose color to match your design */
+  padding: 8px 32px 8px 32px;
+}
+
+.search-button {
+  background-color: #4CAF50; /* Adjust to match the button color in the image */
+  color: white;
+  border: none;
+  padding: 16px 24px 16px 24px;
+  margin-right: 8px;
+  border-radius: 8px; /* Adjust to match the border-radius of your inputs */
+  cursor: pointer;
+  text-transform: uppercase; /* Makes the button text uppercase */
+  font-weight: bold;
+}
+
+/* Adjust for responsive layout */
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-input,
+  .search-date,
+  .search-guests,
+  .search-button {
+    margin-right: 0;
+    margin-bottom: 8px; /* Adds space between the inputs when stacked */
+    flex-grow: 0; /* Prevents inputs from growing in a stacked layout */
+  }
+
+  .search-button {
+    width: 100%; /* Makes the button full width on smaller screens */
+  }
+}
+
+.datePickerContainer {
+  display: flex;
+  margin: 10px;
+}
+
+.datePicker {
+  border: none;
+  background-color: #f5f5f5;
+  color: #999;
+}

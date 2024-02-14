@@ -1,13 +1,126 @@
+/* module.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap');
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  width: 100%; 
+  height: 100%;
+  /* justify-content: center; */
+  /* padding: 24px 300px 128px 300px; */
+  /* gap: 64px; */
+  /* box-sizing: border-box; */
+  background: linear-gradient(to bottom, #e9f9fb 0%, #b2ddee 30%);
+  font-family: 'Roboto Flex', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.height1 {
+  font-size: 76px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 39px;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 31px;
+  font-weight: 700;
+}
+
+h6 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Text classes */
+.text-16 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.text-16-bold {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.text-14 {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.small-text-12 {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.field-text-14 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.button {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.menu-links {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.menu-items {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+
+.content {
+  /* max-width: 1920px; */
+  /* width: 100%; */
+  /* height: auto;
+  background-color: #f0f0f0; */
+  /* padding: 20px; */
+  /* box-sizing: border-box; */
+}
+
+.breadcrumbs {
+  max-width: 1200px;
+  margin: 20px auto;
+  color:black;
+}
+
+.breadcrumbs > *{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.breadcrumbs .crumb:after{
+  content: ">";
+  margin-left: 10px;
+  color: #009649;
+  width: 16px;
+  height: 16px;
+}
+
+.breadcrumbs .crumb:last-child:after{
+  display: none;
+}
+
+.breadcrumbs .crumb a {
+  color: #000000;
 }

@@ -1,0 +1,98 @@
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+    background-color: #f4f7fa;
+    padding: 20px;
+    border-radius: 10px;
+    height:100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+.titleFilter {
+  font-size:16px;
+  font-weight:500 ;
+  margin-bottom:10px;
+}
+
+  .filter-container h2,
+  .filter-container h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .range-section input[type="number"],
+  .price-range label,
+  .checkbox-section label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .range-section input[type="number"] {
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px;
+    width: 126px;
+    height: 40px;
+  }
+  
+  .price-range label,
+  .checkbox-section label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .price-range label input[type="radio"],
+  .checkbox-section label input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  .horizontal-slider {
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+  /* border: 1px solid grey; */
+  }
+
+  .horizontal-slider .example-track {
+    top: 20px;
+    height: 4px;
+    border-radius: 10px;
+  }
+
+  .example-track.example-track-0{
+    background: gray;
+  }
+
+  .example-track.example-track-1{
+    background: #00b9f2;
+  }
+
+  .example-track.example-track-2{
+    background: gray;
+  }
+
+  .horizontal-slider .example-thumb {
+    top: 12px;
+    width: 20px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 0.6em;
+    text-align: center;
+    background-color: #00b9f2;
+    color: black;
+    cursor: pointer;
+    border: 1px solid #00b9f2;
+    box-sizing: border-box;
+    border-radius: 100%;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px
+}
+
+
+  /* You would need additional CSS for the range slider and styling of radio buttons and checkboxes */
+  /* This is just a basic starting point */
