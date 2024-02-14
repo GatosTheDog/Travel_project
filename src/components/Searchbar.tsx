@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import "./Searchbar.css"; // This is correct for regular CSS
+import React, { useContext, useState } from "react";
+import "./Searchbar.css";
 import { fetchData } from "../api/fetchData";
 import { Package } from "../screens/PackagesScreen";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import DatePicker from "react-datepicker";
+import { AppContext } from '../AppContext';
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -15,17 +16,18 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
   onSearchResults,
 }) => {
   const [location, setLocation] = useState("");
-  const [checkInDate, setCheckInDate] = useState("");
-  const [checkOutDate, setCheckOutDate] = useState("");
   const [guests, setGuests] = useState(1);
-  const [selectedDay, setSelectedDay] = useState(null);
 
   const [startDate, setStartDate] = useState<any>(new Date());
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error('SomeChildComponent must be used within an AppProvider');
+  }
 
   const handleSearch = async () => {
     try {
-      const { data } = await fetchData(); // Fetch all data
-      const filteredData = data.filter((item) => {
+      const filteredData = context.data.filter((item: any) => {
         if (location === "") {
           return item;
         }

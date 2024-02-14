@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./FilterComponent.css";
 import { fetchData } from "../api/fetchData";
 import { Package } from "../screens/PackagesScreen";
 import ReactSlider from "react-slider";
+import { AppContext } from "../AppContext";
 
 interface SearchComponentProps {
   onFilterResults: (filteredData: Package[]) => void;
@@ -15,6 +16,11 @@ const FilterComponent: React.FC<SearchComponentProps> = ({
   const [customRange, setCustomRange] = useState<any>([]);
   const [fromValue, setFromValue] = useState<number | undefined>(undefined);
   const [toValue, setToValue] = useState<number | undefined>(undefined);
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error('SomeChildComponent must be used within an AppProvider');
+  }
 
   useEffect(() => {
     if (
@@ -28,7 +34,7 @@ const FilterComponent: React.FC<SearchComponentProps> = ({
 
   const handleSearch = async () => {
     try {
-      const { data } = await fetchData(); // Fetch all data
+      const { data } = context; // Fetch all data
       let filteredData: Package[] = data;
       if (fromValue && toValue) {
         filteredData = filteredData.filter(
@@ -54,7 +60,6 @@ const FilterComponent: React.FC<SearchComponentProps> = ({
             );
             break;
           default:
-            // If no price range is selected, do not filter by price
             break;
         }
       }

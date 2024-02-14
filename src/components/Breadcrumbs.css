@@ -1,0 +1,26 @@
+.breadcrumbs {
+  max-width: 1200px;
+  margin: 20px auto;
+  color:black;
+}
+
+.breadcrumbs > *{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.breadcrumbs .crumb:after{
+  content: ">";
+  margin-left: 10px;
+  color: #009649;
+  width: 16px;
+  height: 16px;
+}
+
+.breadcrumbs .crumb:last-child:after{
+  display: none;
+}
+
+.breadcrumbs .crumb a {
+  color: #000000;
+}

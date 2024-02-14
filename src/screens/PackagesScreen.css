@@ -192,9 +192,9 @@
     font-size: 20px;
   }
   
-  .dropdown{
+  /* .dropdown{
     justify-content: flex-end;
-  }
+  } */
 
   .packs-dropdown {
     display: flex;
@@ -210,10 +210,15 @@
   width: 200px;
   height: 42px;
 }
-.mobile-filter{
+
+.filter-button{
   display: none;
 }
-  @media (max-width: 768px) {
+
+@media (max-width: 768px) {
+    .mobile-filter{
+      display: none;
+    }
     .filterBar, .searchBar {
       display: none;
     }

@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
 import SearchComponent from "../components/Searchbar";
 import OfferCard from "../components/OfferCard";
-import { fetchData } from "../api/fetchData";
 import "./PackagesScreen.css";
 import FilterComponent from "../components/FilterComponent";
+import { AppContext } from '../AppContext';
 
 export interface Package {
   name: string;
@@ -19,19 +19,19 @@ export const PackagesScreen = () => {
   const [data, setData] = useState<Package[]>([]);
   const [sortMethod, setSortMethod] = useState<string>("default");
   const [activeTab, setActiveTab] = useState("excursions");
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const context = useContext(AppContext);
+
+  if (!context) {
+    throw new Error('SomeChildComponent must be used within an AppProvider');
+  }
+
 
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const result = await fetchData();
-        setData(result.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    getData();
-  }, []);
+    if (context.data) {
+      setData(context.data);
+    }
+  }, [context.data]);
 
   const handleSearchResults = (filteredData: Package[]) => {
     setData(filteredData); // Update the state with filtered data
@@ -45,7 +45,6 @@ export const PackagesScreen = () => {
     setSortMethod(event.target.value);
   };
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
   const toggleModal = () => {
     setIsModalVisible(!isModalVisible);
   };
@@ -61,7 +60,7 @@ export const PackagesScreen = () => {
       case "name-desc":
         return b.name.localeCompare(a.name);
       default:
-        return 0; // No sorting
+        return 0;
     }
   });
 
