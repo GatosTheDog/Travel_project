@@ -223,6 +223,9 @@
     .mobile-filter{
       display: none;
     }
+    .filterBar {
+      display: none;
+    }
     .packs{
       margin-left:0
     }
