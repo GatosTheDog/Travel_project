@@ -35,7 +35,6 @@ const FilterComponent: React.FC<SearchComponentProps> = ({
     try {
       const { data } = context; // Fetch all data
       let filteredData: Package[] = data;
-      console.log('Aaaaaaaaaa', fromValue);
       if (fromValue !== undefined && toValue !== undefined) {
         filteredData = filteredData.filter(
           (item) => item.price >= fromValue && item.price <= toValue
