@@ -5,6 +5,7 @@
     gap:24px;
     justify-content: space-between;
     margin-left:24px;
+    max-width: 1000px;
 }
 
 .buttonContainer{
@@ -202,6 +203,7 @@
     flex-direction: row;
     margin-top: 5%;
     width: 100%;
+    max-width: 1300px;
     /* background-color: gray; */
 }
   
