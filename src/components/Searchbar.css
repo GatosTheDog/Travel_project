@@ -1,30 +1,29 @@
-/* Searchbar.module.css */
 .search-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
-  background-color: #f5f5f5; /* This color should match the image background */
-  padding: 0px, 8px, 0px, 0px;
+  justify-content: space-between; 
+  background-color: #f5f5f5; 
+  padding: 8px;
   border: 1px solid #0000001A;
-  border-radius: 12px; /* Adjust if needed to match the image */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* This adds a subtle shadow */
-  max-width: 1096px; /* Adjust based on the desired width */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1096px;
   width: 100%;
   margin: auto;
-  height: 64px;
+  height: auto;
 }
 
 .search-input,
 .search-date,
 .search-guests {
   border: none;
-  background-color: #f5f5f5; /* Same as the container for seamless appearance */
+  background-color: #f5f5f5;
   margin-left: 8px;
-  padding: 8px 32px 8px 32px;
-  border-radius: 15px; /* Slightly less than container for the inset effect */
-  color: #999
-  
+  padding: 8px;
+  border-radius: 15px;
+  color: #999;
+  flex: 1;
 }
 
 
@@ -54,25 +53,6 @@
   font-weight: bold;
 }
 
-/* Adjust for responsive layout */
-@media (max-width: 768px) {
-  .search-container {
-    flex-direction: column;
-  }
-
-  .search-input,
-  .search-date,
-  .search-guests,
-  .search-button {
-    margin-right: 0;
-    margin-bottom: 8px; /* Adds space between the inputs when stacked */
-    flex-grow: 0; /* Prevents inputs from growing in a stacked layout */
-  }
-
-  .search-button {
-    width: 100%; /* Makes the button full width on smaller screens */
-  }
-}
 
 .datePickerContainer {
   display: flex;
@@ -83,4 +63,38 @@
   border: none;
   background-color: #f5f5f5;
   color: #999;
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    padding: 8px; /* Add some padding to the container */
+  }
+
+  .search-input,
+  .search-date,
+  .search-guests {
+    width: calc(100% - 16px); /* Subtract the left and right padding */
+    margin-left: 0;
+    margin-bottom: 8px; /* Adds space between the inputs when stacked */
+    flex-grow: 0; /* Prevents inputs from growing in a stacked layout */
+  }
+
+  .search-button {
+    width: calc(100% - 16px); /* Adjust button width to account for padding */
+    padding: 16px 0; /* Adjust padding to increase tap target on mobile */
+    margin-bottom: 8px; /* Adds space below the button */
+  }
+}
+
+/* Mobile adjustments for date picker container if necessary */
+@media (max-width: 768px) {
+  .datePickerContainer {
+    flex-direction: column;
+    margin: 10px 0; /* Adjust margin for mobile */
+  }
+
+  .datePicker {
+    width: 100%; /* Full-width date picker */
+  }
 }
